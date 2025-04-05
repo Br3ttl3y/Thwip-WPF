@@ -1,0 +1,67 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Style x:Key="LoadingBorder" TargetType="Border">
+        <Setter Property="Width" Value="200" />
+        <Setter Property="Height" Value="200" />
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="LightGray" Offset="0.0" />
+                    <GradientStop Color="White" Offset="0.5" />
+                    <GradientStop Color="LightGray" Offset="1.0" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+                <BeginStoryboard>
+                    <Storyboard RepeatBehavior="Forever">
+                        <DoubleAnimation Storyboard.TargetProperty="(Background).(LinearGradientBrush.GradientStops)[1].Offset"
+                                        From="0.0" To="1.0" Duration="0:0:2" />
+                        <DoubleAnimation Storyboard.TargetProperty="(Background).(LinearGradientBrush.GradientStops)[2].Offset"
+                                        From="0.5" To="1.5" Duration="0:0:2" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="LoadingTextBox" TargetType="TextBox">
+        <Setter Property="Width" Value="200" />
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="BorderBrush" Value="Gray" />
+        <Setter Property="BorderThickness" Value="2" />
+        <Setter Property="Foreground" Value="DarkGray" />
+        <Setter Property="Text" Value="Loading..." />
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                    <GradientStop Color="LightGray" Offset="0.0" />
+                    <GradientStop Color="White" Offset="0.5" />
+                    <GradientStop Color="LightGray" Offset="1.0" />
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+                <BeginStoryboard>
+                    <Storyboard RepeatBehavior="Forever">
+                        <DoubleAnimation Storyboard.TargetProperty="(Background).(LinearGradientBrush.GradientStops)[1].Offset"
+                                        From="0.0" To="1.0" Duration="0:0:2" />
+                        <DoubleAnimation Storyboard.TargetProperty="(Background).(LinearGradientBrush.GradientStops)[2].Offset"
+                                        From="0.5" To="1.5" Duration="0:0:2" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+
+    
+</ResourceDictionary>
